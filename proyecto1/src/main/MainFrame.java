@@ -1,23 +1,13 @@
 package main;
 
-import gui.LoginPanel; // Importamos tu panel de error
-import gui.LoginErrorPanel; // Importamos tu panel de login
-import gui.ReportePanel;
-import gui.ValoracionPanel;
-import gui.ValoracionEnviada;
-import gui.ReporteEnviadoPanel;
-import gui.RegistroPanel; // Importamos tu panel de error
+import gui.LoginPanel;
 import gui.FelicitacionMadre;
-import gui.MainPanel;
-import gui.ProfesorDetalle;
-import gui.Asignaturas;
-import gui.ConfiguracionPanel;
-import java.awt.*; // Importamos tu panel de error
-import java.util.Locale; // Importamos tu panel de error
-import java.util.ResourceBundle; // Importamos tu panel de error
+import java.awt.*;
+import java.util.Locale;
+import java.util.ResourceBundle;
 import java.util.Deque;
 import java.util.ArrayDeque;
-import javax.swing.*;   
+import javax.swing.*;
 
 public class MainFrame extends JFrame {
     private CardLayout cardLayout;
@@ -34,10 +24,10 @@ public class MainFrame extends JFrame {
         bundle = ResourceBundle.getBundle("bundle.Bundle", Locale.getDefault());
 
         setTitle("UCO-Reviews - Interfaz");
-        setSize(350, 650); // Tamaño vertical tipo móvil
+        setSize(900, 700);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        setLocationRelativeTo(null); // Centrar en la pantalla
-        setResizable(false); // Evitar que se deforme
+        setLocationRelativeTo(null);
+        setResizable(false);
 
         // Usamos CardLayout para apilar las pantallas y mostrar solo una
         cardLayout = new CardLayout();
@@ -51,19 +41,8 @@ public class MainFrame extends JFrame {
     private void buildViews() {
         mainPanel.removeAll();
 
-        // Añadimos las pantallas al contenedor. 
-        // Le damos un "nombre clave" (ej. "INICIO") para llamarla luego
+        // Añadimos las pantallas al contenedor.
         mainPanel.add(new LoginPanel(this), "LOGIN");
-        mainPanel.add(new LoginErrorPanel(this), "LOGIN_ERROR");
-        mainPanel.add(new RegistroPanel(this), "REGISTRO");
-        mainPanel.add(new ReportePanel(this), "REPORTE");
-        mainPanel.add(new ReporteEnviadoPanel(this), "REPORTE_ENVIADO");
-        mainPanel.add(new MainPanel(this), "MAIN_ESTUDIANTE");
-        mainPanel.add(new ConfiguracionPanel(this), "CONFIGURACION");
-        mainPanel.add(new Asignaturas(this), "ASIGNATURAS");
-        mainPanel.add(new ProfesorDetalle(this), "PROFESOR_DETALLE");
-        mainPanel.add(new ValoracionPanel(this), "VALORACION");
-        mainPanel.add(new ValoracionEnviada(this), "VALORACION_ENVIADA");
         mainPanel.add(new FelicitacionMadre(this), "FELICITACION_MADRE");
 
         mainPanel.revalidate();
