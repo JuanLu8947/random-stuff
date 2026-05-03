@@ -1,0 +1,9 @@
+noVNC
+
+Local:
+http://127.0.0.1:6080/vnc.html?autoconnect=true&resize=scale
+
+Codespaces público:
+https://CODESPACENAME-6080.app.github.dev/vnc.html?autoconnect=true&resize=scale
+
+Abrir en VS Code: usa el comando 'Open Link' o 'vscode.open' sobre la URL que imprima run-gui.sh.
