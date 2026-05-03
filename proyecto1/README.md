@@ -25,7 +25,7 @@ sudo apt-get update
 Desde la raiz del workspace:
 
 ```bash
-cd /workspaces/Sistemas_Interactivos && javac -target 11 -source 11 -d bin $(find proyecto/src -name '*.java') 2>&1 | sed -n '1,200p'
+cd /workspaces/random-stuff/proyecto1 && javac -target 11 -source 11 -d bin $(find src -name '*.java') 2>&1 | sed -n '1,200p'
 ```
 
 ## Ejecutar interfaz grafica en contenedor
@@ -33,7 +33,7 @@ cd /workspaces/Sistemas_Interactivos && javac -target 11 -source 11 -d bin $(fin
 Desde la raiz del workspace:
 
 ```bash
-cd /workspaces/Sistemas_Interactivos/proyecto
+cd /workspaces/random-stuff/proyecto1
 ./run-gui.sh
 ```
 
@@ -46,7 +46,7 @@ http://127.0.0.1:6080/vnc.html?autoconnect=true&resize=scale
 ## Detener servicios graficos
 
 ```bash
-cd /workspaces/Sistemas_Interactivos/proyecto
+cd /workspaces/random-stuff/proyecto1
 ./stop-gui.sh
 ```
 

@@ -1,7 +1,8 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
-ROOT_DIR="/workspaces/Sistemas_Interactivos"
+SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" >/dev/null 2>&1 && pwd)"
+ROOT_DIR="$SCRIPT_DIR"
 DISPLAY_NUM=":99"
 NOVNC_PORT="6080"
 VNC_PORT="5901"
@@ -14,8 +15,8 @@ mkdir -p "$RUNTIME_DIR"
 # Copiar recursos al classpath antes de arrancar Java.
 sync_resources() {
   mkdir -p "$ROOT_DIR/bin/resources" "$ROOT_DIR/bin/bundle"
-  cp -R "$ROOT_DIR/proyecto/src/resources/." "$ROOT_DIR/bin/resources/" 2>/dev/null || true
-  cp -R "$ROOT_DIR/proyecto/src/bundle/." "$ROOT_DIR/bin/bundle/" 2>/dev/null || true
+  cp -R "$ROOT_DIR/src/resources/." "$ROOT_DIR/bin/resources/" 2>/dev/null || true
+  cp -R "$ROOT_DIR/src/bundle/." "$ROOT_DIR/bin/bundle/" 2>/dev/null || true
 }
 
 # Función: limpiar todos los procesos pendientes
@@ -103,5 +104,5 @@ echo "  - x11vnc:    $RUNTIME_DIR/x11vnc.log"
 echo "  - noVNC:     $RUNTIME_DIR/novnc.log"
 echo "  - MainFrame: $RUNTIME_DIR/mainframe.log"
 echo ""
-echo "Para parar:  cd proyecto && ./stop-gui.sh"
+echo "Para parar:  cd proyecto1 && ./stop-gui.sh"
 echo "═════════════════════════════════════════════════════════════"
