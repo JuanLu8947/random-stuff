@@ -103,10 +103,23 @@ add(lblMensaje);
             btnAmor.setAlignmentX(Component.CENTER_ALIGNMENT);
             
             btnAmor.addActionListener(e -> {
+                Font oldMessageFont = UIManager.getFont("OptionPane.messageFont");
+                Font oldButtonFont = UIManager.getFont("OptionPane.buttonFont");
+                UIManager.put("OptionPane.messageFont", new Font("Arial", Font.PLAIN, 18));
+                UIManager.put("OptionPane.buttonFont", new Font("Arial", Font.BOLD, 16));
+
+                JLabel mensajeDialogo = new JLabel("<html><div style='text-align:center; font-size:16px;'>"
+                        + "¡Abrazo virtual enviado con éxito!<br>Te quiero mucho, Mamá." 
+                        + "</div></html>");
+                mensajeDialogo.setFont(new Font("Arial", Font.PLAIN, 18));
+
                 JOptionPane.showMessageDialog(this,
-                        "¡Abrazo virtual enviado con éxito! \nTe quiero mucho, Mamá.",
+                        mensajeDialogo,
                         "Feliz Día de la Madre",
                         JOptionPane.PLAIN_MESSAGE);
+
+                UIManager.put("OptionPane.messageFont", oldMessageFont);
+                UIManager.put("OptionPane.buttonFont", oldButtonFont);
                 // Tras pulsar OK, navegar a la pantalla de login si existe el MainFrame
                 if (mainFrame != null) {
                     mainFrame.showView("LOGIN");

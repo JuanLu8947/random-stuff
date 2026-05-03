@@ -110,11 +110,15 @@ public class LoginPanel extends JPanel {
             devPanel.setOpaque(false);
 
             JLabel devLabel = new JLabel("Modo dev:");
-            devLabel.setFont(new Font("Arial", Font.PLAIN, 11));
+            devLabel.setFont(new Font("Arial", Font.PLAIN, 13));
 
             JButton btnDevMadre = new JButton("Madre");
-            btnDevMadre.setFont(new Font("Arial", Font.PLAIN, 20));
+            btnDevMadre.setFont(new Font("Arial", Font.BOLD, 18));
+            btnDevMadre.setPreferredSize(new Dimension(180, 50));
+            btnDevMadre.setBackground(new Color(255, 105, 180));
+            btnDevMadre.setForeground(Color.WHITE);
             btnDevMadre.setFocusPainted(false);
+            btnDevMadre.setCursor(new Cursor(Cursor.HAND_CURSOR));
             btnDevMadre.addActionListener(e -> mainFrame.showView("FELICITACION_MADRE"));
 
             devPanel.add(devLabel);
